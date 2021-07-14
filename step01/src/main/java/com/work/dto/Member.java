@@ -1,6 +1,7 @@
 package com.work.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +17,8 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString(exclude = {"memberPw" , "mobile"}, includeFieldNames = false)
-@AllArgsConstructor
+@AllArgsConstructor //선행처리 해야할 로직이 있을 때는 어노테이션을 안 쓰고, 직접 생성자를 만들어서 쓰기도 한다.
+@Builder
 public class Member {
 	private String memberId;
 //	@ToString.Exclude 
