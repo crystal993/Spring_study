@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 조심해야할 것  
+	1. 위에 xml선언문은 무조건 첫번째라인에 있어야만 한다. 
+	2. 뒤에 반드시 공백이 존재해야만 한다. -->
+	
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.dao.MemberDao">
+  
+  <!-- public String login(String memberId, String memberPw); -->
+  <select id="login" resultType="String" parameterType="map">
+    select grade from Member where member_id=#{memberId} and member_pw=#{memberPw}
+  </select>
+  
+   <!-- public int join(Member dto); 
+   		#{mileage, jdbcType=NUMERIC}, #{manager, jdbcType=VARCHAR} null column config-->
+  <insert id="join" parameterType="com.work.dto.Member">
+  insert into member(member_id, member_pw, name, mobile, email, entry_date, grade, mileage, manager)
+  values(#{memberId}, #{memberPw}, #{name}, #{mobile}, #{email}, #{entryDate}, #{grade}, #{mileage, jdbcType=NUMERIC}, #{manager, jdbcType=VARCHAR})
+  </insert>
+
+	<!--public List<Member> selectMemberList();-->
+	<select id="selectMemberList" resultType="com.work.dto.Member">
+	   select * from member
+	</select>
+	
+	<!-- public Member selectMember(String memberId); -->
+	<select id="selectMember" resultType="com.work.dto.Member" parameterType="String">
+		select * from member where member_id=#{memberId}
+	</select>
+
+</mapper>	
