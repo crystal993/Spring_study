@@ -14,13 +14,13 @@
 	  </select>
 	  
 	  <!-- public Member loginToMember(String memberId, String memberPw); -->
-	   <select id="loginToMember" resultType="com.work.dto.Member" parameterType="map">
+	   <select id="loginToMember" resultType="Member" parameterType="map">
 	    select * from Member where member_id=#{memberId} and member_pw=#{memberPw}
 	  </select>	
 	  
 	  <!-- public int join(Member dto); 
 	   		#{mileage, jdbcType=NUMERIC}, #{manager, jdbcType=VARCHAR} null column config-->
-	  <insert id="join" parameterType="com.work.dto.Member">
+	  <insert id="join" parameterType="Member">
 	  insert into member(member_id, member_pw, name, mobile, email, entry_date, grade, mileage, manager)
 	  values(#{memberId}, #{memberPw}, #{name}, #{mobile}, #{email}, #{entryDate}, #{grade}, #{mileage, jdbcType=NUMERIC}, #{manager, jdbcType=VARCHAR})
 	  </insert>
@@ -31,7 +31,7 @@
 	</select>
 	
 	<!-- public Member selectMember(String memberId); -->
-	<select id="selectMember" resultType="com.work.dto.Member" parameterType="String">
+	<select id="selectMember" resultType="Member" parameterType="String">
 		select * from member where member_id=#{memberId}
 	</select>
 	

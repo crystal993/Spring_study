@@ -29,7 +29,7 @@ public class NeedToLogoutInterceptor implements HandlerInterceptor {
 			PrintWriter out = response.getWriter();
 			
 			out.append("<script>");
-			out.append("alert('로그아웃하시기 바랍니다.');");
+			out.append("alert('로그인 되어 있습니다.');");
 			out.append("location.replace('/main');");
 			out.append("</script>");
 			

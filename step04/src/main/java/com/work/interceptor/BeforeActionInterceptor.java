@@ -47,7 +47,8 @@ public class BeforeActionInterceptor implements HandlerInterceptor {
 		}
 		
 		// 관리자 여부 체킹 : isAdmin 설정 
-		if (grade.equals("A") || (dto != null && dto.getGrade().equals("A"))) {
+		if ((grade != null && grade.equals("A")) || 
+				(dto != null && dto.getGrade().equals("A"))) {
 			isAdmin = true;
 		}
 		

@@ -15,13 +15,13 @@
 		<c:when test="${empty memberId || empty dto }">
 			<a href="joinForm">회원가입</a>
 			<a href="loginForm">로그인</a>
+			
+			<div>로그정보 : ${memberId} [${grade}]</div>
+			<a href="logout">로그아웃</a>
+			<a href="selectMember">내정보 조회</a>
 		</c:when>
 		
 		<c:otherwise>
-			<div>로그정보 : ${memberId} [${dto.grade}]</div>
-			<a href="logout">로그아웃</a>
-			<a href="selectMember">내정보 조회</a>
-			
 			<!-- 관리자 권한 전체회원조회 서비스 제공 -->
 			<c:if test="${grade eq 'A'}">
 				<span> [관리자] </span>
