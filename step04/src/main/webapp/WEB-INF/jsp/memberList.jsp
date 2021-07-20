@@ -18,6 +18,9 @@
 </style>
 </head>
 <body>
+
+
+
 <h3>전체회원조회 페이지</h3>
 <img src="/img/logo.jpg">
 
@@ -39,6 +42,11 @@
 			</c:if>
 		</c:otherwise>
 	</c:choose>
+
+
+<!-- 다중조건검색 조각페이지 삽입 -->
+<jsp:include page="inc/multipleCondition.jsp"></jsp:include>
+
 
 <c:if test="${not empty memberList}">
 			<table>

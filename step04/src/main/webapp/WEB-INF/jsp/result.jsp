@@ -20,7 +20,7 @@
 			
 			<div>로그정보 : ${memberId} [${dto.grade}]</div>
 			<a href="logout">로그아웃</a>
-			<a href="selectMember">내정보 조회</a>
+			<a href="myInfo">내정보 조회</a>
 		</c:when>
 		
 		<c:otherwise>

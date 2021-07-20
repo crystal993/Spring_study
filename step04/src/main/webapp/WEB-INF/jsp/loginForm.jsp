@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인페이지</title>
-<link type="text/css" rel="stylesheet" href="/css/common.css">
+<link type="text/css" rel="stylesheet" href="../css/common.css">
 </head>
 <body>
 <img src="/img/logo.jpg">

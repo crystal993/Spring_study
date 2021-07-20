@@ -10,27 +10,14 @@
 </head>
 <body>
 <img src="/img/logo.jpg">
+<a href="joinForm">회원가입</a>
+<a href="loginForm">로그인</a>
 
-	<c:choose>
-		<c:when test="${empty memberId || empty dto }">
-			<a href="joinForm">회원가입</a>
-			<a href="loginForm">로그인</a>
-			
-			<div>로그정보 : ${memberId} [${grade}]</div>
-			<a href="logout">로그아웃</a>
-			<a href="selectMember">내정보 조회</a>
-		</c:when>
-		
-		<c:otherwise>
-			<!-- 관리자 권한 전체회원조회 서비스 제공 -->
-			<c:if test="${grade eq 'A'}">
-				<span> [관리자] </span>
-				<a href="memberList">전체회원조회</a>
-			</c:if>
-		</c:otherwise>
-	</c:choose>
-	
-
+<!-- 관리자 권한 전체회원조회 서비스 제공 -->
+<c:if test="${grade eq 'A'}">
+	<span> [관리자] </span>
+	<a href="memberList">전체회원조회</a>
+</c:if>
 
 <h3>메인페이지</h3>
 <c:if test="${not empty message}">
