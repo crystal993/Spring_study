@@ -1,0 +1,25 @@
+@charset "UTF-8";
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: red;
+}
+
+/* form config: input 태그 block, margin 설정 */
+input {
+	display: block;
+	margin: 10px;
+}
+
+/* form config : input 태그 submit, reset, button inline 설정 */
+input[type="submit"], input[type="reset"], input[type="button"] {
+	display : inline;
+}
+
+table, tr, th, td {
+	margin : 10px;
+	padding : 5px;
+	border: 1px solid lightblue;			
+}
